@@ -3,8 +3,8 @@ import './globals.css'
 import Header from '@/components/Header'
 
 export const metadata: Metadata = {
-  title: 'Markdown Blog',
-  description: 'A modern blog built with Next.js and Markdown',
+  title: 'Tradestack',
+  description: 'Tradestack - The Forex knowledge guide for professional trading.',
 }
 
 export default function RootLayout({

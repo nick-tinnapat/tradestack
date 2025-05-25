@@ -37,7 +37,7 @@ body {
   max-width: var(--max-width);
   min-width: var(--min-width);
   margin: var(--guide-width) auto var(--horizontal-margin);
-  padding: 40px;
+  padding: 60px;
   border: 1px solid var(--guide-color);
   position: relative;
   display: flex;
@@ -45,17 +45,25 @@ body {
   box-sizing: border-box;
 }
 
-/* ปรับเส้นประแนวตั้งให้อยู่ด้านหลังเนื้อหา */
+.container::before,
 .container::after {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
   width: var(--guide-width);
   height: 100%;
   border-left: var(--guide-width) dashed var(--dashed-color);
-  transform: translateX(-50%);
   z-index: -1; /* วางเส้นประด้านหลังเนื้อหา */
+}
+
+.container::before {
+  left: 33.3333%;
+  transform: translateX(-50%);
+}
+
+.container::after {
+  left: 66.6667%;
+  transform: translateX(-50%);
 }
 
 .main-content {
@@ -205,5 +213,15 @@ code {
     margin-left: auto;
     margin-right: auto;
 
+  }
+}
+
+@media (max-width: 768px) {
+  .container::before {
+    display: none;
+  }
+  .container::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
